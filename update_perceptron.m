@@ -10,22 +10,25 @@ for x=1:63
     modul=mod(res,2);
     matrix(x,7)=modul;
 end
-
+%%변수공간들..
 w_z=-0.5 + 0.5 .*rand(6,6);
 w_z_z=-0.5 + 0.5 .*rand(6,6);
 w_y=-0.5+ 0.5 .*rand(1,6);
+
 input=zeros(1,6);
+hide_la_la=zeros(1,6);
 hide_la=zeros(1,6);
+
 dz=zeros(1,6);
 dzz=zeros(1,6);
-hide_la_la=zeros(1,6);
+
 dv=zeros(6,6);
 dvv=zeros(6,6);
 dw=zeros(1,6);
 countn=0;
 %netz,nety값 설정
 error=1;
-while error > 0.1
+while error > 0.01
     error=0;
     count=0;
 for x=1:48
